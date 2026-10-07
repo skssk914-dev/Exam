@@ -72,7 +72,7 @@
             box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.06);
             gap: 0.6rem;
             width: 100%;
-            flex-wrap: wrap; /* 화면이 작을 때 자연스러운 배치 지원 */
+            flex-wrap: wrap;
         }
 
         .header-left {
@@ -144,20 +144,19 @@
             white-space: nowrap;
         }
 
-        /* select 박스 글씨 잘림 방지 수정 부분 */
         select {
             background-color: #ffffff;
             color: var(--text-main);
             border: 2px solid var(--border-color);
-            padding: 0.35rem 1.8rem 0.35rem 0.6rem; /* 우측 화살표 여백 확보 */
+            padding: 0.35rem 1.8rem 0.35rem 0.6rem;
             font-size: clamp(0.85rem, 2.3vw, 1.2rem);
             font-weight: 800;
             border-radius: 0.6rem;
             outline: none;
             cursor: pointer;
-            width: auto;             /* 너비 자동 계산 */
-            max-width: none;         /* 최대 너비 제한 해제 */
-            white-space: nowrap;     /* 줄바꿈 방지 */
+            width: auto;
+            max-width: none;
+            white-space: nowrap;
         }
 
         /* -------------------------------------------------- */
@@ -352,6 +351,7 @@
             padding: 0.6rem 0.4rem;
         }
 
+        /* 전체 교시일 때 실시간 강조 스타일 */
         .period-card.status-active {
             border-color: var(--active-border) !important;
             background-color: var(--active-bg) !important;
@@ -842,7 +842,10 @@
                 for (let p of currentDay.periods) {
                     const subject = p.subjects[grade] || '해당 없음';
                     if (currentTimeStr >= p.startTime && currentTimeStr < p.prepEndTime) {
-                        highlightCard(currentDay.date, p.period, "status-prep");
+                        // 전체 교시 탭 선택 시에만 카드에 하이라이트 적용
+                        if (selectedPeriodFilter === 'all') {
+                            highlightCard(currentDay.date, p.period, "status-prep");
+                        }
                         statusTag.innerText = "준비 시간";
                         statusTag.style.color = "#ca8a04";
                         statusTag.style.borderColor = "#fde047";
@@ -851,7 +854,10 @@
                         break;
                     } 
                     else if (currentTimeStr >= p.prepEndTime && currentTimeStr < p.endTime) {
-                        highlightCard(currentDay.date, p.period, "status-active");
+                        // 전체 교시 탭 선택 시에만 카드에 하이라이트 적용
+                        if (selectedPeriodFilter === 'all') {
+                            highlightCard(currentDay.date, p.period, "status-active");
+                        }
                         statusTag.innerText = "시험 진행 중";
                         statusTag.style.color = "#dc2626";
                         statusTag.style.borderColor = "#f43f5e";
