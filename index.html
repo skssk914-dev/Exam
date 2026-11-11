@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2026학년도 2학기 1차 정기시험 시정표</title>
+    <title>2026학년도 2학기 2차 정기시험 시정표</title>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/webfontworld/nanumsquareneo/nanumsquareneo.css');
 
@@ -560,9 +560,9 @@
             <div class="control-group">
                 <label for="daySelect">일정</label>
                 <select id="daySelect" onchange="renderSchedule()">
-                    <option value="2026-10-06">1일차 (10. 6. 화)</option>
-                    <option value="2026-10-07">2일차 (10. 7. 수)</option>
-                    <option value="2026-10-08">3일차 (10. 8. 목)</option>
+                    <option value="2026-11-30">1일차 (11.30. 월)</option>
+                    <option value="2026-12-01">2일차 (12. 1. 화)</option>
+                    <option value="2026-12-02">3일차 (12. 2. 수)</option>
                 </select>
             </div>
             <div class="control-group">
@@ -623,8 +623,35 @@
     <script>
         const examData = [
             {
-                date: "2026-10-06",
-                dayName: "10. 6.(화)",
+                date: "2026-11-30",
+                dayName: "11.30.(월)",
+                periods: [
+                    {
+                        period: "1교시",
+                        prep: "09:00 ~ 09:05",
+                        exam: "09:05 ~ 09:50",
+                        startTime: "09:00", endTime: "09:50", prepEndTime: "09:05",
+                        subjects: { 1: "수학 (04)", 2: "수학 (04)", 3: "수학 (04)" }
+                    },
+                    {
+                        period: "2교시",
+                        prep: "10:00 ~ 10:05",
+                        exam: "10:05 ~ 10:50",
+                        startTime: "10:00", endTime: "10:50", prepEndTime: "10:05",
+                        subjects: { 1: "도덕 (02)", 2: "자 율", 3: "도덕 (02)" }
+                    },
+                    {
+                        period: "3교시",
+                        prep: "11:00 ~ 11:05",
+                        exam: "11:05 ~ 11:50",
+                        startTime: "11:00", endTime: "11:50", prepEndTime: "11:05",
+                        subjects: { 1: "과학 (05)", 2: "과학 (05)", 3: "과학 (05)" }
+                    }
+                ]
+            },
+            {
+                date: "2026-12-01",
+                dayName: "12. 1.(화)",
                 periods: [
                     {
                         period: "1교시",
@@ -645,61 +672,34 @@
                         prep: "11:00 ~ 11:05",
                         exam: "11:05 ~ 11:50",
                         startTime: "11:00", endTime: "11:50", prepEndTime: "11:05",
-                        subjects: { 1: "사회 (03)", 2: "자 율", 3: "자 율" }
+                        subjects: { 1: "영어 (10)", 2: "영어 (10)", 3: "영어 (10)" }
                     }
                 ]
             },
             {
-                date: "2026-10-07",
-                dayName: "10. 7.(수)",
+                date: "2026-12-02",
+                dayName: "12. 2.(수)",
                 periods: [
                     {
                         period: "1교시",
                         prep: "09:00 ~ 09:05",
                         exam: "09:05 ~ 09:50",
                         startTime: "09:00", endTime: "09:50", prepEndTime: "09:05",
-                        subjects: { 1: "자 율", 2: "자 율", 3: "수학 (04)" }
+                        subjects: { 1: "사회 (03)", 2: "자 율", 3: "사회 (03)" }
                     },
                     {
                         period: "2교시",
                         prep: "10:00 ~ 10:05",
                         exam: "10:05 ~ 10:50",
                         startTime: "10:00", endTime: "10:50", prepEndTime: "10:05",
-                        subjects: { 1: "수학 (04)", 2: "수학 (04)", 3: "자 율" }
+                        subjects: { 1: "한문(11)/중국어(13)", 2: "한문(11)/중국어(13)", 3: "자 율" }
                     },
                     {
                         period: "3교시",
                         prep: "11:00 ~ 11:05",
                         exam: "11:05 ~ 11:50",
                         startTime: "11:00", endTime: "11:50", prepEndTime: "11:05",
-                        subjects: { 1: "자 율", 2: "자 율", 3: "사회 (03)" }
-                    }
-                ]
-            },
-            {
-                date: "2026-10-08",
-                dayName: "10. 8.(목)",
-                periods: [
-                    {
-                        period: "1교시",
-                        prep: "09:00 ~ 09:05",
-                        exam: "09:05 ~ 09:50",
-                        startTime: "09:00", endTime: "09:50", prepEndTime: "09:05",
-                        subjects: { 1: "영어 (10)", 2: "영어 (10)", 3: "자 율" }
-                    },
-                    {
-                        period: "2교시",
-                        prep: "10:00 ~ 10:05",
-                        exam: "10:05 ~ 10:50",
-                        startTime: "10:00", endTime: "10:50", prepEndTime: "10:05",
-                        subjects: { 1: "자 율", 2: "자 율", 3: "영어 (10)" }
-                    },
-                    {
-                        period: "3교시",
-                        prep: "11:00 ~ 11:05",
-                        exam: "11:05 ~ 11:50",
-                        startTime: "11:00", endTime: "11:50", prepEndTime: "11:05",
-                        subjects: { 1: "과학 (05)", 2: "과학 (05)", 3: "과학 (05)" }
+                        subjects: { 1: "기·가 (06)", 2: "기·가 (06)", 3: "기·가 (06)" }
                     }
                 ]
             }
